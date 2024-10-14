@@ -1,0 +1,865 @@
+<html lang="en"><head><meta charset="utf-8"><link rel="icon" href="/favicon.ico"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#000000"><meta name="description" content="Web site created using create-react-app"><link rel="apple-touch-icon" href="/logo192.png"><link rel="manifest" href="/manifest.json"><title>React App</title><script>const process={env:{REACT_APP_GOOGLE_MAP_ID:"AIzaSyBUm5XOBrPWp0wrjscmpmRGMxnakj3vrkI"}};!function(t,s,h,e,j,n){t.hj=t.hj||function(){(t.hj.q=t.hj.q||[]).push(arguments)},t._hjSettings={hjid:2998035,hjsv:6},j=s.getElementsByTagName("head")[0],(n=s.createElement("script")).async=1,n.src="https://static.hotjar.com/c/hotjar-"+t._hjSettings.hjid+".js?sv="+t._hjSettings.hjsv,j.appendChild(n)}(window,document)</script><script async="" src="https://static.hotjar.com/c/hotjar-2998035.js?sv=6"></script><link rel="stylesheet" type="text/css" href="./css/index.css"><script id="tailwind-config"></script><script defer="defer" src="/static/js/main.049bffab.js"></script><link href="/static/css/main.56daace8.css" rel="stylesheet"><style data-emotion="css"></style><style type="text/css">:root {
+  --inspx-margin-color: #f24822;
+  --inspx-padding-color: #0bb658;
+  --inspx-size-color: #0070f3;
+  --inspx-active-color: #0070f330;
+}
+
+inspx {
+  box-sizing: border-box;
+  height: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+    'Helvetica Neue', sans-serif;
+  font-size: 11px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 4px;
+  color: white;
+  padding: 0 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1337;
+}
+
+[data-inspx-active] {
+  background: var(--inspx-active-color) !important;
+}
+
+margin {
+  background: var(--inspx-margin-color);
+  opacity: 0.4;
+}
+
+padding {
+  border-color: var(--inspx-padding-color);
+  border-style: solid;
+  opacity: 0.4;
+}
+
+inspx[type='margin'] {
+  background: var(--inspx-margin-color);
+}
+
+inspx[type='padding'] {
+  background: var(--inspx-padding-color);
+}
+
+inspx[type='size'] {
+  background: var(--inspx-size-color);
+}
+</style><style id="CSS_INDEX_DOT_CSS">/*=========== TABLE OF CONTENTS ===========
+1. Reset CSS
+2. CSS Variables
+3. Utility CSS
+4. Page CSS
+5. Component CSS
+6. Fonts CSS
+==========================================*/
+
+/*-------------------------------------
+  1. Reset CSS
+--------------------------------------*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Nunito;
+}
+
+* {
+  box-sizing: border-box;
+  line-height: normal;
+  font-family: inherit;
+  margin: unset;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+}
+
+ul {
+  margin: 0;
+  margin-inline: unset !important;
+  padding: 0;
+  list-style: none;
+}
+
+[type='text'], input:where(:not([type])), [type='email'], [type='url'], [type='password'], 
+[type='number'], [type='date'], [type='datetime-local'], [type='month'], 
+[type='search'], [type='tel'], [type='time'], [type='week'], [multiple], 
+textarea, select, button {
+  appearance: none;
+  background-color: transparent;
+  border-color: unset;
+  border-width: 0;
+  border-radius: unset;
+  padding: unset;
+  font-size: unset;
+  line-height: unset;
+  color: inherit;
+}
+
+input:focus-visible, [multiple]:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: none;
+}
+
+/*-------------------------------------
+  2. CSS Variables
+--------------------------------------*/
+:root {
+  /*------Color variables------*/
+  --black_900: #000000;
+  --gray_800: #383b48;
+  --gray_900: #22232b;
+  --gray_900_01: #131313;
+  --gray_900_02: #1a1a1a;
+  --gray_900_19: #1a1a1a19;
+  --gray_900_7f: #22232b7f;
+  --white_a700: #ffffff;
+
+  /*------Spacing variables------*/
+  --space-xs: 6px;
+  --space-sm: 12px;
+  --space-md: 20px;
+}
+
+/*-------------------------------------
+  3. Utility CSS
+--------------------------------------*/
+.flex-row-center-center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+/*-------------------------------------
+  4. Page CSS
+--------------------------------------*/
+.ecommerce-desktop {
+  gap: 28px;
+  background-color: var(--white_a700);
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.group-176 {
+  width: 100%;
+  max-width: 1326px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (max-width: 1050px) {
+  .group-176 {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: var(--space-md);
+}
+@media only screen and (max-width: 550px) {
+  .header {
+    flex-direction: column;
+  }
+}
+
+.header__group {
+  align-self: center;
+  width: 26%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+}
+@media only screen and (max-width: 550px) {
+  .header__group {
+    width: 100%;
+  }
+}
+
+.header__logo {
+  width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__nav {
+  display: flex;
+}
+
+.header__nav-item {
+  gap: 40px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header__right-nav {
+  margin-top: 20px;
+  width: 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+}
+@media only screen and (max-width: 550px) {
+  .header__right-nav {
+    width: 100%;
+  }
+}
+
+.header__icon--cart {
+  height: 24px;
+  width: 24px;
+}
+
+.group-139 {
+  margin-bottom: 4px;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+}
+
+.section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  max-width: 1326px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media only screen and (max-width: 1050px) {
+  .section {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+}
+
+.section__group {
+  gap: 68px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+@media only screen and (max-width: 550px) {
+  .section__group {
+    gap: 34px;
+  }
+}
+
+/* Other styles for the remaining classes... */
+
+/*-------------------------------------
+  5. Component CSS
+--------------------------------------*/
+.ui.button.square {
+  border-radius: 0px;
+}
+
+.ui.button.size-xs {
+  height: 42px;
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: 13px;
+}
+
+.ui.button.size-sm {
+  height: 70px;
+}
+
+.ui.button.fill.gray_900 {
+  background-color: var(--gray_900);
+  color: var(--white_a700);
+}
+
+.ui.button {
+  text-align: center;
+  display: flex;
+  cursor: pointer;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.container-xs {
+  max-width: 1326px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*-------------------------------------
+  6. Fonts CSS
+--------------------------------------*/
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url(https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/fonts/NunitoExtraBold.ttf);
+  font-family: "Nunito";
+  font-weight: 800;
+}
+
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url(https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/fonts/RobotoRegular.ttf);
+  font-family: "Roboto";
+  font-weight: 400;
+}
+
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url(https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/fonts/RobotoBold.ttf);
+  font-family: "Roboto";
+  font-weight: 700;
+}
+
+@font-face {
+  font-display: swap;
+  font-style: normal;
+  src: url(https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/fonts/NunitoRegular.ttf);
+  font-family: "Nunito";
+  font-weight: 400;
+}
+</style></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><div id="output"><span><div>
+  
+  
+  
+    <meta charset="utf-8">
+    <title>Ecommerce Shop - Find Your Perfect Furniture</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Explore our Ecommerce Shop for the finest furniture collections. From cozy armchairs to elegant table sets, find everything for your living room. Enjoy a seamless shopping experience with filters for color, category, and price range.">
+    <img alt="Logo" src="https://appproject.dhiwise.com/dhiwise-logo.png?c=Inz-3c92fd-QSJ&amp;v=" style="width:0px;height:0px;display:none;">
+
+    
+  
+  
+  <div class="ecommerce-desktop">
+<div class="group-176">
+<header class="header">
+<div class="header__group">
+<button class="header__logo ui button size-sm square">
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_header_logo.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=768c9e7818a88e5b0d6b5e3fdd6d0dd80bbf0c254399620e3998db15e4669a26&amp;X-Amz-SignedHeaders=host">
+</button>
+<div class="header__nav">
+<ul class="header__nav-item">
+<li>
+<a href="#">
+<p class="header__link--login ui heading size-headingxs">
+Home</p>
+</a>
+</li>
+<li>
+<a href="#">
+<p class="header__link--login ui heading size-headingxs">
+Shop</p>
+</a>
+</li>
+<li>
+<a href="#">
+<p class="header__link--login ui heading size-headingxs">
+Magazine</p>
+</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="header__right-nav">
+<a href="#">
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_cart.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=bc8c28727e4a89a5aa01768ab61d651233964107fe681799aad2a8299056de19&amp;X-Amz-SignedHeaders=host" alt="Cart Icon" class="header__icon--cart">
+</a>
+<p class="header__link--login ui heading size-headingxs">
+Login</p>
+</div>
+</header>
+</div>
+<div class="group-139">
+<div class="section">
+<div class="section__group">
+<div class="section__search">
+<div class="search__field">
+<div class="search__field-group">
+<div class="search__input-group">
+<div class="search__input-row">
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_rewind.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=5cbf7590a4c6c40db714e61a9cb07d2b7af01cb530f507f92990c75f021aca60&amp;X-Amz-SignedHeaders=host" alt="Rewind Icon" class="search__icon--rewind">
+<h1 class="search__query ui heading size-headingmd">
+living room</h1>
+</div>
+<div class="search__attribution">
+<p class="search__attribution-text ui text size-texts">
+<span>
+Powered by&nbsp;</span>
+<span class="search__attribution-text-span">
+Sajari.com</span>
+</p>
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_airplane.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=7e20308cd6ed6701e0b0457ae1af772cbf640f56fa292d15a0191a424b7d8e43&amp;X-Amz-SignedHeaders=host" alt="Airplane Icon" class="search__icon--airplane">
+</div>
+</div>
+<div class="search__divider">
+</div>
+</div>
+</div>
+<div class="section__sort">
+<div class="sort__options">
+<p class="sort__label ui text size-textlg">
+Best match</p>
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_arrow_down.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=7f1a64307e3bd4c42f0933a1e68f39b24a93faea4ee5b4a043d5e7fd30cf7716&amp;X-Amz-SignedHeaders=host" alt="Sort Icon" class="sort__icon--arrowdown">
+</div>
+<div class="sort__divider">
+</div>
+</div>
+</div>
+<div class="section__content">
+<div class="content__filter">
+<p class="filter-panel__title ui text size-texts">
+Filter by</p>
+<div class="filter-panel__field">
+<div class="filter-panel__field-group">
+<div class="filter-panel__dropdown">
+<p class="filter-panel__title-8 ui text size-textmd">
+Collection</p>
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_arrow_down.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=7f1a64307e3bd4c42f0933a1e68f39b24a93faea4ee5b4a043d5e7fd30cf7716&amp;X-Amz-SignedHeaders=host" alt="Dropdown Icon" class="filter-panel__icon">
+</div>
+<div class="sort__divider">
+</div>
+</div>
+</div>
+<div class="filter-panel__field-1">
+<div class="filter-panel__field-group">
+<div class="filter-panel__dropdown">
+<p class="filter-panel__title-8 ui text size-textmd">
+Color</p>
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_arrow_down.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=7f1a64307e3bd4c42f0933a1e68f39b24a93faea4ee5b4a043d5e7fd30cf7716&amp;X-Amz-SignedHeaders=host" alt="Dropdown Icon" class="filter-panel__icon">
+</div>
+<div class="sort__divider">
+</div>
+</div>
+</div>
+<div class="filter-panel__field-1">
+<div class="filter-panel__field-group">
+<div class="filter-panel__dropdown">
+<p class="filter-panel__title-8 ui text size-textmd">
+Category</p>
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_arrow_down.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=7f1a64307e3bd4c42f0933a1e68f39b24a93faea4ee5b4a043d5e7fd30cf7716&amp;X-Amz-SignedHeaders=host" alt="Dropdown Icon" class="filter-panel__icon">
+</div>
+<div class="sort__divider">
+</div>
+</div>
+</div>
+<div class="filter-panel__price-range">
+<p class="filter-panel__title-8 ui text size-textmd">
+Price Range</p>
+<input type="range" min="1" max="100" value="50" class="filter-panel__seekbar">
+<div class="filter-panel__price-labels">
+<p class="filter-panel__price-label--min ui text size-texts">
+$0</p>
+<p class="filter-panel__price-label--min ui text size-texts">
+$10,000+</p>
+</div>
+</div>
+</div>
+<div class="content__filter">
+<p class="filter-panel__title ui text size-texts">
+Filter by</p>
+<div class="filter-panel__field">
+<div class="filter-panel__field-group">
+<div class="filter-panel__dropdown">
+<p class="filter-panel__title-8 ui text size-textmd">
+Collection</p>
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_arrow_down.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=7f1a64307e3bd4c42f0933a1e68f39b24a93faea4ee5b4a043d5e7fd30cf7716&amp;X-Amz-SignedHeaders=host" alt="Dropdown Icon" class="filter-panel__icon">
+</div>
+<div class="sort__divider">
+</div>
+</div>
+</div>
+<div class="filter-panel__field-1">
+<div class="filter-panel__field-group">
+<div class="filter-panel__dropdown">
+<p class="filter-panel__title-8 ui text size-textmd">
+Color</p>
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_arrow_down.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=7f1a64307e3bd4c42f0933a1e68f39b24a93faea4ee5b4a043d5e7fd30cf7716&amp;X-Amz-SignedHeaders=host" alt="Dropdown Icon" class="filter-panel__icon">
+</div>
+<div class="sort__divider">
+</div>
+</div>
+</div>
+<div class="filter-panel__field-1">
+<div class="filter-panel__field-group">
+<div class="filter-panel__dropdown">
+<p class="filter-panel__title-8 ui text size-textmd">
+Category</p>
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_arrow_down.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=7f1a64307e3bd4c42f0933a1e68f39b24a93faea4ee5b4a043d5e7fd30cf7716&amp;X-Amz-SignedHeaders=host" alt="Dropdown Icon" class="filter-panel__icon">
+</div>
+<div class="sort__divider">
+</div>
+</div>
+</div>
+<div class="filter-panel__price-range">
+<p class="filter-panel__title-8 ui text size-textmd">
+Price Range</p>
+<input type="range" min="1" max="100" value="50" class="filter-panel__seekbar">
+<div class="filter-panel__price-labels">
+<p class="filter-panel__price-label--min ui text size-texts">
+$0</p>
+<p class="filter-panel__price-label--min ui text size-texts">
+$10,000+</p>
+</div>
+</div>
+</div>
+<div class="content__filter">
+<p class="filter-panel__title ui text size-texts">
+Filter by</p>
+<div class="filter-panel__field">
+<div class="filter-panel__field-group">
+<div class="filter-panel__dropdown">
+<p class="filter-panel__title-8 ui text size-textmd">
+Collection</p>
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_arrow_down.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=7f1a64307e3bd4c42f0933a1e68f39b24a93faea4ee5b4a043d5e7fd30cf7716&amp;X-Amz-SignedHeaders=host" alt="Dropdown Icon" class="filter-panel__icon">
+</div>
+<div class="sort__divider">
+</div>
+</div>
+</div>
+<div class="filter-panel__field-1">
+<div class="filter-panel__field-group">
+<div class="filter-panel__dropdown">
+<p class="filter-panel__title-8 ui text size-textmd">
+Color</p>
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_arrow_down.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=7f1a64307e3bd4c42f0933a1e68f39b24a93faea4ee5b4a043d5e7fd30cf7716&amp;X-Amz-SignedHeaders=host" alt="Dropdown Icon" class="filter-panel__icon">
+</div>
+<div class="sort__divider">
+</div>
+</div>
+</div>
+<div class="filter-panel__field-1">
+<div class="filter-panel__field-group">
+<div class="filter-panel__dropdown">
+<p class="filter-panel__title-8 ui text size-textmd">
+Category</p>
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_arrow_down.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=7f1a64307e3bd4c42f0933a1e68f39b24a93faea4ee5b4a043d5e7fd30cf7716&amp;X-Amz-SignedHeaders=host" alt="Dropdown Icon" class="filter-panel__icon">
+</div>
+<div class="sort__divider">
+</div>
+</div>
+</div>
+<div class="filter-panel__price-range">
+<p class="filter-panel__title-8 ui text size-textmd">
+Price Range</p>
+<input type="range" min="1" max="100" value="50" class="filter-panel__seekbar">
+<div class="filter-panel__price-labels">
+<p class="filter-panel__price-label--min ui text size-texts">
+$0</p>
+<p class="filter-panel__price-label--min ui text size-texts">
+$10,000+</p>
+</div>
+</div>
+</div>
+<div class="content__filter">
+<p class="filter-panel__title ui text size-texts">
+Filter by</p>
+<div class="filter-panel__field">
+<div class="filter-panel__field-group">
+<div class="filter-panel__dropdown">
+<p class="filter-panel__title-8 ui text size-textmd">
+Collection</p>
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_arrow_down.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=7f1a64307e3bd4c42f0933a1e68f39b24a93faea4ee5b4a043d5e7fd30cf7716&amp;X-Amz-SignedHeaders=host" alt="Dropdown Icon" class="filter-panel__icon">
+</div>
+<div class="sort__divider">
+</div>
+</div>
+</div>
+<div class="filter-panel__field-1">
+<div class="filter-panel__field-group">
+<div class="filter-panel__dropdown">
+<p class="filter-panel__title-8 ui text size-textmd">
+Color</p>
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_arrow_down.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=7f1a64307e3bd4c42f0933a1e68f39b24a93faea4ee5b4a043d5e7fd30cf7716&amp;X-Amz-SignedHeaders=host" alt="Dropdown Icon" class="filter-panel__icon">
+</div>
+<div class="sort__divider">
+</div>
+</div>
+</div>
+<div class="filter-panel__field-1">
+<div class="filter-panel__field-group">
+<div class="filter-panel__dropdown">
+<p class="filter-panel__title-8 ui text size-textmd">
+Category</p>
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_arrow_down.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=7f1a64307e3bd4c42f0933a1e68f39b24a93faea4ee5b4a043d5e7fd30cf7716&amp;X-Amz-SignedHeaders=host" alt="Dropdown Icon" class="filter-panel__icon">
+</div>
+<div class="sort__divider">
+</div>
+</div>
+</div>
+<div class="filter-panel__price-range">
+<p class="filter-panel__title-8 ui text size-textmd">
+Price Range</p>
+<input type="range" min="1" max="100" value="50" class="filter-panel__seekbar">
+<div class="filter-panel__price-labels">
+<p class="filter-panel__price-label--min ui text size-texts">
+$0</p>
+<p class="filter-panel__price-label--min ui text size-texts">
+$10,000+</p>
+</div>
+</div>
+</div>
+<div class="content__filter">
+<p class="filter-panel__title ui text size-texts">
+Filter by</p>
+<div class="filter-panel__field">
+<div class="filter-panel__field-group">
+<div class="filter-panel__dropdown">
+<p class="filter-panel__title-8 ui text size-textmd">
+Collection</p>
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_arrow_down.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=7f1a64307e3bd4c42f0933a1e68f39b24a93faea4ee5b4a043d5e7fd30cf7716&amp;X-Amz-SignedHeaders=host" alt="Dropdown Icon" class="filter-panel__icon">
+</div>
+<div class="sort__divider">
+</div>
+</div>
+</div>
+<div class="filter-panel__field-1">
+<div class="filter-panel__field-group">
+<div class="filter-panel__dropdown">
+<p class="filter-panel__title-8 ui text size-textmd">
+Color</p>
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_arrow_down.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=7f1a64307e3bd4c42f0933a1e68f39b24a93faea4ee5b4a043d5e7fd30cf7716&amp;X-Amz-SignedHeaders=host" alt="Dropdown Icon" class="filter-panel__icon">
+</div>
+<div class="sort__divider">
+</div>
+</div>
+</div>
+<div class="filter-panel__field-1">
+<div class="filter-panel__field-group">
+<div class="filter-panel__dropdown">
+<p class="filter-panel__title-8 ui text size-textmd">
+Category</p>
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_arrow_down.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=7f1a64307e3bd4c42f0933a1e68f39b24a93faea4ee5b4a043d5e7fd30cf7716&amp;X-Amz-SignedHeaders=host" alt="Dropdown Icon" class="filter-panel__icon">
+</div>
+<div class="sort__divider">
+</div>
+</div>
+</div>
+<div class="filter-panel__price-range">
+<p class="filter-panel__title-8 ui text size-textmd">
+Price Range</p>
+<input type="range" min="1" max="100" value="50" class="filter-panel__seekbar">
+<div class="filter-panel__price-labels">
+<p class="filter-panel__price-label--min ui text size-texts">
+$0</p>
+<p class="filter-panel__price-label--min ui text size-texts">
+$10,000+</p>
+</div>
+</div>
+</div>
+<div class="content__filter">
+<p class="filter-panel__title ui text size-texts">
+Filter by</p>
+<div class="filter-panel__field">
+<div class="filter-panel__field-group">
+<div class="filter-panel__dropdown">
+<p class="filter-panel__title-8 ui text size-textmd">
+Collection</p>
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_arrow_down.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=7f1a64307e3bd4c42f0933a1e68f39b24a93faea4ee5b4a043d5e7fd30cf7716&amp;X-Amz-SignedHeaders=host" alt="Dropdown Icon" class="filter-panel__icon">
+</div>
+<div class="sort__divider">
+</div>
+</div>
+</div>
+<div class="filter-panel__field-1">
+<div class="filter-panel__field-group">
+<div class="filter-panel__dropdown">
+<p class="filter-panel__title-8 ui text size-textmd">
+Color</p>
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_arrow_down.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=7f1a64307e3bd4c42f0933a1e68f39b24a93faea4ee5b4a043d5e7fd30cf7716&amp;X-Amz-SignedHeaders=host" alt="Dropdown Icon" class="filter-panel__icon">
+</div>
+<div class="sort__divider">
+</div>
+</div>
+</div>
+<div class="filter-panel__field-1">
+<div class="filter-panel__field-group">
+<div class="filter-panel__dropdown">
+<p class="filter-panel__title-8 ui text size-textmd">
+Category</p>
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_arrow_down.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=7f1a64307e3bd4c42f0933a1e68f39b24a93faea4ee5b4a043d5e7fd30cf7716&amp;X-Amz-SignedHeaders=host" alt="Dropdown Icon" class="filter-panel__icon">
+</div>
+<div class="sort__divider">
+</div>
+</div>
+</div>
+<div class="filter-panel__price-range">
+<p class="filter-panel__title-8 ui text size-textmd">
+Price Range</p>
+<input type="range" min="1" max="100" value="50" class="filter-panel__seekbar">
+<div class="filter-panel__price-labels">
+<p class="filter-panel__price-label--min ui text size-texts">
+$0</p>
+<p class="filter-panel__price-label--min ui text size-texts">
+$10,000+</p>
+</div>
+</div>
+</div>
+<div class="content__filter">
+<p class="filter-panel__title ui text size-texts">
+Filter by</p>
+<div class="filter-panel__field">
+<div class="filter-panel__field-group">
+<div class="filter-panel__dropdown">
+<p class="filter-panel__title-8 ui text size-textmd">
+Collection</p>
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_arrow_down.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=7f1a64307e3bd4c42f0933a1e68f39b24a93faea4ee5b4a043d5e7fd30cf7716&amp;X-Amz-SignedHeaders=host" alt="Dropdown Icon" class="filter-panel__icon">
+</div>
+<div class="sort__divider">
+</div>
+</div>
+</div>
+<div class="filter-panel__field-1">
+<div class="filter-panel__field-group">
+<div class="filter-panel__dropdown">
+<p class="filter-panel__title-8 ui text size-textmd">
+Color</p>
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_arrow_down.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=7f1a64307e3bd4c42f0933a1e68f39b24a93faea4ee5b4a043d5e7fd30cf7716&amp;X-Amz-SignedHeaders=host" alt="Dropdown Icon" class="filter-panel__icon">
+</div>
+<div class="sort__divider">
+</div>
+</div>
+</div>
+<div class="filter-panel__field-1">
+<div class="filter-panel__field-group">
+<div class="filter-panel__dropdown">
+<p class="filter-panel__title-8 ui text size-textmd">
+Category</p>
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_arrow_down.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=7f1a64307e3bd4c42f0933a1e68f39b24a93faea4ee5b4a043d5e7fd30cf7716&amp;X-Amz-SignedHeaders=host" alt="Dropdown Icon" class="filter-panel__icon">
+</div>
+<div class="sort__divider">
+</div>
+</div>
+</div>
+<div class="filter-panel__price-range">
+<p class="filter-panel__title-8 ui text size-textmd">
+Price Range</p>
+<input type="range" min="1" max="100" value="50" class="filter-panel__seekbar">
+<div class="filter-panel__price-labels">
+<p class="filter-panel__price-label--min ui text size-texts">
+$0</p>
+<p class="filter-panel__price-label--min ui text size-texts">
+$10,000+</p>
+</div>
+</div>
+</div>
+<div class="content__filter">
+<p class="filter-panel__title ui text size-texts">
+Filter by</p>
+<div class="filter-panel__field">
+<div class="filter-panel__field-group">
+<div class="filter-panel__dropdown">
+<p class="filter-panel__title-8 ui text size-textmd">
+Collection</p>
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_arrow_down.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=7f1a64307e3bd4c42f0933a1e68f39b24a93faea4ee5b4a043d5e7fd30cf7716&amp;X-Amz-SignedHeaders=host" alt="Dropdown Icon" class="filter-panel__icon">
+</div>
+<div class="sort__divider">
+</div>
+</div>
+</div>
+<div class="filter-panel__field-1">
+<div class="filter-panel__field-group">
+<div class="filter-panel__dropdown">
+<p class="filter-panel__title-8 ui text size-textmd">
+Color</p>
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_arrow_down.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=7f1a64307e3bd4c42f0933a1e68f39b24a93faea4ee5b4a043d5e7fd30cf7716&amp;X-Amz-SignedHeaders=host" alt="Dropdown Icon" class="filter-panel__icon">
+</div>
+<div class="sort__divider">
+</div>
+</div>
+</div>
+<div class="filter-panel__field-1">
+<div class="filter-panel__field-group">
+<div class="filter-panel__dropdown">
+<p class="filter-panel__title-8 ui text size-textmd">
+Category</p>
+<img src="https://dhws-production.s3.ap-south-1.amazonaws.com/670961ddbe734f0018491081/67096268f56f6100233c92f5/67096268f56f6100233c92fd/appSource/images/img_arrow_down.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAQODH4IWPQLIXIJ64%2F20241012%2Fap-south-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20241012T102644Z&amp;X-Amz-Expires=25200&amp;X-Amz-Signature=7f1a64307e3bd4c42f0933a1e68f39b24a93faea4ee5b4a043d5e7fd30cf7716&amp;X-Amz-SignedHeaders=host" alt="Dropdown Icon" class="filter-panel__icon">
+</div>
+<div class="sort__divider">
+</div>
+</div>
+</div>
+<div class="filter-panel__price-range">
+<p class="filter-panel__title-8 ui text size-textmd">
+Price Range</p>
+<input type="range" min="1" max="100" value="50" class="filter-panel__seekbar">
+<div class="filter-panel__price-labels">
+<p class="filter-panel__price-label--min ui text size-texts">
+$0</p>
+<p class="filter-panel__price-label--min ui text size-texts">
+$10,000+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section__pagination">
+<button class="flex-row-center-center pagination__button ui button gray_900 size-xs fill square">
+1</button>
+<div class="pagination__item">
+<h2 class="pagination__number ui heading size-headingxs">
+2</h2>
+</div>
+<div class="pagination__item-1">
+<h3 class="pagination__number ui heading size-headingxs">
+3</h3>
+</div>
+<div class="pagination__item-2">
+<h4 class="pagination__number ui heading size-headingxs">
+4</h4>
+</div>
+<div class="pagination__item-1">
+<h5 class="pagination__number ui heading size-headingxs">
+5</h5>
+</div>
+<div class="pagination__item-1">
+<h6 class="pagination__number ui heading size-headingxs">
+6</h6>
+</div>
+<div class="pagination__item-1">
+<p class="pagination__number ui heading size-headingxs">
+7</p>
+</div>
+<div class="pagination__item-1">
+<p class="pagination__number ui heading size-headingxs">
+8</p>
+</div>
+<div class="pagination__item-1">
+<p class="pagination__number ui heading size-headingxs">
+9</p>
+</div>
+<div class="pagination__item-8">
+<p class="pagination__number ui heading size-headingxs">
+10</p>
+</div>
+<div class="pagination__item-9">
+<p class="pagination__number ui heading size-headingxs">
+&gt;</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+  
+  
+  </div></span></div><div class="react-toast-notifications__container css-xg5s2c"></div></body></html>
